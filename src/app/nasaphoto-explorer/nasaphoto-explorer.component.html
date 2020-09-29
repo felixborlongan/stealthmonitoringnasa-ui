@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-12">
+        <input  id="singleFile" type="file" (change)="OnFileInputChange($event.target.files)"/>
+        <br> <br>
+        <button mat-raised-button color="primary" (click)="OnUploadButtonClick()" [disabled]="inputFile == null">Upload</button>
+    </div>
+</div>
+<hr>
+<div class="row" *ngIf="galleryImages.length > 0">
+    <div class="col-md-12">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    </div>
+</div>
